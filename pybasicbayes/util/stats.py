@@ -8,8 +8,8 @@ import scipy.stats as stats
 import scipy.special as special
 import scipy.linalg
 from scipy.special import logsumexp
-from numpy.core.umath_tests import inner1d
-
+import numpy as np
+inner1d = lambda x, y: np.einsum('ij,ij->i', x, y)
 from .general import any_none, blockarray
 
 ### data abstraction

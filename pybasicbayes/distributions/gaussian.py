@@ -11,7 +11,11 @@ __all__ = \
 
 import numpy as np
 from numpy import newaxis as na
-from numpy.core.umath_tests import inner1d
+# from numpy.core.umath_tests import inner1d
+import numpy as np
+inner1d = lambda x, y: np.einsum('ij,ij->i', x, y)
+
+
 import scipy.linalg
 import scipy.stats as stats
 import scipy.special as special
